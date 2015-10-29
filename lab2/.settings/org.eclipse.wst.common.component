@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="lab2">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/.apt_generated"/>
+        <dependent-module archiveName="HongliOptical-EJB.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/HongliOptical-EJB/HongliOptical-EJB">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="HongliOptical-EJBClient.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/HongliOptical-EJBClient/HongliOptical-EJBClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/lab2/WebContent/WEB-INF/classes"/>
+        <property name="context-root" value="lab2"/>
+    </wb-module>
+</project-modules>

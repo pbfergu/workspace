@@ -2,8 +2,8 @@
     <wb-module deploy-name="HongliOptical-EJB">
         <wb-resource deploy-path="/" source-path="/ejbModule" tag="defaultRootSource"/>
         <wb-resource deploy-path="/" source-path="/.apt_generated"/>
-        <property name="ClientJARURI" value="HongliOptical-EJBClient.jar"/>
-        <property name="ClientProject" value="HongliOptical-EJBClient"/>
         <property name="java-output-path" value="/HongliOptical-EJB/build/classes"/>
+        <property name="ClientProject" value="HongliOptical-EJBClient"/>
+        <property name="ClientJARURI" value="HongliOptical-EJBClient.jar"/>
     </wb-module>
 </project-modules>
