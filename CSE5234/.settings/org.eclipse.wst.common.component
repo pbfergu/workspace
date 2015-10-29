@@ -3,7 +3,7 @@
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/.apt_generated"/>
-        <dependent-module archiveName="HongliOptical-EJBClient.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/HongliOptical-EJBClient/HongliOptical-EJBClient">
+        <dependent-module archiveName="HongliOptical-EJB.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/HongliOptical-EJB/HongliOptical-EJB">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="HongliOptical-EJBClient.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/HongliOptical-EJBClient/HongliOptical-EJBClient">
