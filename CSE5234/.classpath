@@ -20,5 +20,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/HongliOptical-EJB"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/HongliOptical-EJBClient"/>
+	<classpathentry kind="lib" path="/Users/Zeller/Code/h2/bin/h2-1.4.190.jar"/>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>

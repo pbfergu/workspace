@@ -17,12 +17,18 @@
 	<tr>
 		<th>No.</th>
 		<th>Name</th>
-		<th>quantity</th>
+		<th>Description</th>
+		<th>Price</th>
+		<th>Stock</th>
+		<th>Quantity</th>
 	</tr>
 	<c:forEach items="${order.itemList}" var="item" varStatus="status">
 		<tr>
 			<td align="center">${status.count}</td>
 			<td><form:hidden path="itemList[${status.index}].name"/>${item.name}</td>
+			<td><form:hidden path="itemList[${status.index}].description"/>${item.description}</td>
+			<td><form:hidden path="itemList[${status.index}].unitPrice"/>${item.unitPrice}</td>
+			<td><form:hidden path="itemList[${status.index}].quantity"/>${item.quantity}</td>
 			<td><form:input path="itemList[${status.index}].quantity" value="0"/></td>
 		</tr>
 	</c:forEach>

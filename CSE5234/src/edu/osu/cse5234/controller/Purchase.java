@@ -33,7 +33,7 @@ public class Purchase {
 		Iterator<Item> it = order.getItemList().iterator();
 		while(it.hasNext()){
 			Item item = it.next();
-			if(item.getQuantity().equals("0"))
+			if(item.getQuantity()==0)
 				it.remove();
 		}
 		
