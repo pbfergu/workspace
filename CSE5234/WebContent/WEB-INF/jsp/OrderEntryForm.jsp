@@ -12,7 +12,7 @@
 <c:out value="${message}" />
 <div class="container">
 <div class="row">
-<form:form method="post" action="purchase/submitItems" modelAttribute="order">
+<form:form method="post" action="purchase/submitItems" modelAttribute="inventory">
 	<table class="table">
 	<tr>
 		<th>No.</th>
@@ -22,13 +22,13 @@
 		<th>Stock</th>
 		<th>Quantity</th>
 	</tr>
-	<c:forEach items="${order.itemList}" var="item" varStatus="status">
+	<c:forEach items="${inventory.itemList}" var="item" varStatus="status">
 		<tr>
 			<td align="center">${status.count}</td>
-			<td><form:hidden path="itemList[${status.index}].name"/>${item.name}</td>
-			<td><form:hidden path="itemList[${status.index}].description"/>${item.description}</td>
-			<td><form:hidden path="itemList[${status.index}].unitPrice"/>${item.unitPrice}</td>
-			<td><form:hidden path="itemList[${status.index}].quantity"/>${item.quantity}</td>
+			<td><form:hidden path="itemList[${status.index}].name" />${item.name}</td>
+			<td>${item.description}</td>
+			<td>${item.unitPrice}</td>
+			<td>${item.quantity}</td>
 			<td><form:input path="itemList[${status.index}].quantity" value="0"/></td>
 		</tr>
 	</c:forEach>

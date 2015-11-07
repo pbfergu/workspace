@@ -5,6 +5,8 @@
 		<class>edu.osu.cse5234.business.view.Item</class>
 		<properties>
 			<property name="eclipselink.weaving" value="false"/>
+			<property name="eclipselink.ddl-generation" value="create-tables"/>
+			<property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.H2Platform"/>
 		</properties>
 	</persistence-unit>
 </persistence>

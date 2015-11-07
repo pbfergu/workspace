@@ -12,20 +12,6 @@
 <%@include file="Header.jsp"%>
 <form:form method="post" action="submitPayment" modelAttribute="payment">
 	<table class="table">
-	<tr>
-		<th>No.</th>
-		<th>Name</th>
-		<th>quantity</th>
-	</tr>
-	<c:forEach items="${order.itemList}" var="item" varStatus="status">
-		<tr>
-			<td align="center">${status.count}</td>
-			<td>${item.name}</td>
-			<td><input value="${item.quantity}"/></td>
-		</tr>
-	</c:forEach>
-</table>
-	<table class="table">
 		<br>
 		Please Input Your Payment Infomation
 		<tr>

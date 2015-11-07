@@ -6,8 +6,8 @@ public interface InventoryService {
 	
 	public Inventory getAvailableInventory();
 	
-	public boolean validateQuantity(Collection<Item> items);
+	public boolean validateQuantity(Collection<LineItem> items);
 	
-	public boolean updateInventory(Collection<Item> items);
+	public boolean updateInventory(Collection<LineItem> items);
 
 }

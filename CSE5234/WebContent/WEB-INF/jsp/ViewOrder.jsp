@@ -11,21 +11,16 @@
 <body>
 <%@include file="Header.jsp"%>
 <h1>View Order</h1>
-
-
-
-
-
 	<table class="table">
 	<tr>
 		<th>No.</th>
 		<th>Name</th>
 		<th>quantity</th>
 	</tr>
-	<c:forEach items="${order.itemList}" var="item" varStatus="status">
+	<c:forEach items="${order.lineItems}" var="item" varStatus="status">
 		<tr>
 			<td align="center">${status.count}</td>
-			<td>${item.name}</td>
+			<td>${item.itemName}</td>
 			<td>${item.quantity}</td>
 		</tr>
 	</c:forEach>
