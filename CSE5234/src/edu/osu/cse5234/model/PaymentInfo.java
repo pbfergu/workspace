@@ -17,6 +17,7 @@ public class PaymentInfo {
 	private String cvvCode;
 	private String cardHolderName;
 	private Order order;
+	private String confirmationNumber;
 	
 	
 	@Id
@@ -67,6 +68,14 @@ public class PaymentInfo {
 	}
 	public void setOrder(Order order) {
 		this.order = order;
+	}
+	
+	@Column(name="CONFIRMATION_NUMBER")
+	public String getConfirmationNumber() {
+		return confirmationNumber;
+	}
+	public void setConfirmationNumber(String confirmationNumber) {
+		this.confirmationNumber = confirmationNumber;
 	}
 	
 	
