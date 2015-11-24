@@ -1,7 +1,15 @@
 package edu.osu.cse5234.business;
 
+import java.util.Date;
+
+import javax.annotation.Resource;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
+import javax.jms.ConnectionFactory;
+import javax.jms.JMSConnectionFactory;
+import javax.jms.JMSContext;
+import javax.jms.Queue;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.xml.ws.WebServiceRef;
@@ -17,6 +25,8 @@ import edu.osu.cse5234.util.ServiceLocator;
  */
 @Stateless
 @LocalBean
+@Resource(name="jms/emailQCF", lookup="jms/emailQCF", type=ConnectionFactory.class) 
+
 public class OrderProcessingServiceBean {
 	
 	@PersistenceContext(unitName = "CSE5234")
@@ -24,6 +34,13 @@ public class OrderProcessingServiceBean {
 	
 	@WebServiceRef(wsdlLocation ="http://localhost:9080/ChaseBankApplication/PaymentProcessorService?wsdl")
 	private PaymentProcessorService service;
+
+	@Inject
+	@JMSConnectionFactory("java:comp/env/jms/emailQCF")
+	private JMSContext jmsContext;
+
+	@Resource(lookup="jms/emailQ")
+	private Queue queue;
 
     /**
      * Default constructor. 
@@ -54,8 +71,23 @@ public class OrderProcessingServiceBean {
     	entityManager.persist(order);
     	entityManager.flush();
     	
+    	notifyUser(order.getPaymentInfo().getEmailAddress());
+    	
     	return String.valueOf((int)(10000* Math.random()));
     }
+    
+    private void notifyUser(String customerEmail) {
+
+    	String message = customerEmail + ":" +
+    	       "Your order was successfully submitted. " + 
+    	     	"You will hear from us when items are shipped. " + 
+    	      	new Date();
+
+    	System.out.println("Sending message: " + message);
+    	jmsContext.createProducer().send(queue, message);
+    	System.out.println("Message Sent!");
+    	}
+
     
   //Object#3&#4 (4)
     public boolean validateItemAvailability(Order order) {

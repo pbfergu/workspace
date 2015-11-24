@@ -46,6 +46,10 @@
 		<td>Card Holder Name</td>
 		<td>${payment.cardHolderName}</td>
 	</tr>
+	<tr>
+		<td>Card Holder Name</td>
+		<td>${payment.emailAddress}</td>
+	</tr>
 </table>
 
 <br />

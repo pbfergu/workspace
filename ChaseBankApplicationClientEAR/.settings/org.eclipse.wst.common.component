@@ -2,11 +2,7 @@
     <wb-module deploy-name="ChaseBankApplicationClientEAR">
         <wb-resource deploy-path="/" source-path="/" tag="defaultRootSource"/>
         <dependent-module archiveName="ChaseBankApplicationClient.war" deploy-path="/" handle="module:/resource/ChaseBankApplicationClient/ChaseBankApplicationClient">
-            <dependent-object>Module_1447112863664</dependent-object>
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="ChaseBankApplication.war" deploy-path="/" handle="module:/resource/ChaseBankApplication/ChaseBankApplication">
-            <dependent-object>Module_1447112955418</dependent-object>
+            <dependent-object>Module_1447717343801</dependent-object>
             <dependency-type>uses</dependency-type>
         </dependent-module>
     </wb-module>

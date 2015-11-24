@@ -26,6 +26,18 @@ public interface PaymentProcessorDelegate {
 
     /**
      * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ping", targetNamespace = "http://payment.chase.com/", className = "com.chase.payment.Ping")
+    @ResponseWrapper(localName = "pingResponse", targetNamespace = "http://payment.chase.com/", className = "com.chase.payment.PingResponse")
+    @Action(input = "http://payment.chase.com/PaymentProcessorDelegate/pingRequest", output = "http://payment.chase.com/PaymentProcessorDelegate/pingResponse")
+    public String ping();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns java.lang.String
@@ -38,17 +50,5 @@ public interface PaymentProcessorDelegate {
     public String processPayment(
         @WebParam(name = "arg0", targetNamespace = "")
         CreditCardPayment arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "ping", targetNamespace = "http://payment.chase.com/", className = "com.chase.payment.Ping")
-    @ResponseWrapper(localName = "pingResponse", targetNamespace = "http://payment.chase.com/", className = "com.chase.payment.PingResponse")
-    @Action(input = "http://payment.chase.com/PaymentProcessorDelegate/pingRequest", output = "http://payment.chase.com/PaymentProcessorDelegate/pingResponse")
-    public String ping();
 
 }

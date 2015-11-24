@@ -116,12 +116,12 @@ public class PaymentProcessorPortProxy{
         return _descriptor;
     }
 
-    public String processPayment(CreditCardPayment arg0) {
-        return _getDescriptor().getProxy().processPayment(arg0);
-    }
-
     public String ping() {
         return _getDescriptor().getProxy().ping();
+    }
+
+    public String processPayment(CreditCardPayment arg0) {
+        return _getDescriptor().getProxy().processPayment(arg0);
     }
 
 }

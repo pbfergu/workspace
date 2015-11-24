@@ -20,7 +20,7 @@ public class Order {
 	
 	private int id;
 	private String customerName;
-	private String emailAddress;
+	//private String emailAddress;
 	private List<LineItem> lineItems;
 	private PaymentInfo paymentInfo;
 	private ShippingInfo shippingInfo;
@@ -43,13 +43,14 @@ public class Order {
 		this.customerName = customerName;
 	}
 	
+	/*
 	@Column(name="CUSTOMER_EMAIL")
 	public String getEmailAddress() {
 		return emailAddress;
 	}
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
-	}
+	}*/
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="CUSTOMER_ORDER_ID_FK")

@@ -30,6 +30,10 @@
 			<td>Card Holder Name</td>
 			<td><form:input path="cardHolderName" required="required"/></td>
 		</tr>
+		<tr>
+			<td>Email Address</td>
+			<td><form:input path="emailAddress" required="required"/></td>
+		</tr>
 	</table>		
 <br/>
 <input type="submit" value="Submit" />

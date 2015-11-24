@@ -16,6 +16,7 @@ public class PaymentInfo {
 	private String expDate;
 	private String cvvCode;
 	private String cardHolderName;
+	private String emailAddress;
 	private Order order;
 	private String confirmationNumber;
 	
@@ -60,6 +61,14 @@ public class PaymentInfo {
 	}
 	public void setCardHolderName(String cardHolderName) {
 		this.cardHolderName = cardHolderName;
+	}
+	
+	@Column(name="EMAIL_ADDRESS")
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
 	}
 	
 	@JoinColumn(name="CUSTOMER_ORDER_ID_FK2")
