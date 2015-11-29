@@ -5,6 +5,7 @@
 	<projects>
 		<project>HongliOptical-EJB</project>
 		<project>HongliOptical-EJBClient</project>
+		<project>HongliOptical-NotificationApplication</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -4,7 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -17,8 +16,10 @@ public class PaymentInfo {
 	private String cvvCode;
 	private String cardHolderName;
 	private String emailAddress;
-	private Order order;
+	//private Order order;
 	private String confirmationNumber;
+	
+	private int OrderId;
 	
 	
 	@Id
@@ -71,13 +72,13 @@ public class PaymentInfo {
 		this.emailAddress = emailAddress;
 	}
 	
-	@JoinColumn(name="CUSTOMER_ORDER_ID_FK2")
+	/*@JoinColumn(name="CUSTOMER_ORDER_ID_FK2")
 	public Order getOrder() {
 		return order;
 	}
 	public void setOrder(Order order) {
 		this.order = order;
-	}
+	}*/
 	
 	@Column(name="CONFIRMATION_NUMBER")
 	public String getConfirmationNumber() {
@@ -85,6 +86,14 @@ public class PaymentInfo {
 	}
 	public void setConfirmationNumber(String confirmationNumber) {
 		this.confirmationNumber = confirmationNumber;
+	}
+	
+	@Column(name="CUSTOMER_ORDER_ID_FK")
+	public int getOrderId() {
+		return OrderId;
+	}
+	public void setOrderId(int orderId) {
+		OrderId = orderId;
 	}
 	
 	

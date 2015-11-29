@@ -105,6 +105,7 @@ public class Purchase {
 	@RequestMapping(path = "/Confirmation", method = RequestMethod.GET)
 	public String viewConfirmation(HttpServletRequest request, HttpServletResponse response) {
 		request.setAttribute("confirmationCode", ServiceLocator.getOrderProcessingService().processOrder((Order)request.getSession().getAttribute("order")));
+		//request.setAttribute("confirmationCode", "1");
 		return "Confirmation";
 	}
 }

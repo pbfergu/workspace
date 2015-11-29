@@ -4,7 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -18,7 +17,9 @@ public class ShippingInfo {
 	private String city;
 	private String state;
 	private String zip;
-	private Order order;
+	//private Order order;
+	
+	private int OrderId;
 	
 	@Id
 	@GeneratedValue
@@ -78,14 +79,20 @@ public class ShippingInfo {
 		this.zip = zip;
 	}
 	
-	@JoinColumn(name="CUSTOMER_ORDER_ID_FK3")
+	/*@JoinColumn(name="CUSTOMER_ORDER_ID_FK3")
 	public Order getOrder() {
 		return order;
 	}
 	public void setOrder(Order order) {
 		this.order = order;
+	}*/
+	
+	@Column(name="CUSTOMER_ORDER_ID_FK")
+	public int getOrderId() {
+		return OrderId;
 	}
-	
-	
+	public void setOrderId(int orderId) {
+		OrderId = orderId;
+	}
 	
 }
