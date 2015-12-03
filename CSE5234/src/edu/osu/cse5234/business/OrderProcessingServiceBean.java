@@ -68,6 +68,7 @@ public class OrderProcessingServiceBean {
         	
     	}
     	order.getPaymentInfo().setConfirmationNumber(result);
+    	order.setStatus("New");
     	entityManager.persist(order);
     	entityManager.flush();
     	

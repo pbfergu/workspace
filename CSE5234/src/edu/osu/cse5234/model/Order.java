@@ -23,6 +23,7 @@ public class Order {
 	
 	private int id;
 	private String customerName;
+	private String status;
 	//private String emailAddress;
 	private List<LineItem> lineItems;
 	private PaymentInfo paymentInfo;
@@ -57,6 +58,13 @@ public class Order {
 		this.customerName = customerName;
 	}
 	
+	@Column(name="STATUS")
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	/*
 	@Column(name="CUSTOMER_EMAIL")
 	public String getEmailAddress() {
