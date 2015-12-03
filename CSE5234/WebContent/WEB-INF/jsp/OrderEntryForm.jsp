@@ -24,7 +24,7 @@
 	</tr>
 	<c:forEach items="${inventory.itemList}" var="item" varStatus="status">
 		<tr>
-			<td align="center">${status.count}</td>
+			<td><form:hidden path="itemList[${status.index}].id" />${item.id}</td>
 			<td><form:hidden path="itemList[${status.index}].name" />${item.name}</td>
 			<td>${item.description}</td>
 			<td>${item.unitPrice}</td>

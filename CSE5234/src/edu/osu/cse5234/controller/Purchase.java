@@ -1,7 +1,6 @@
 package edu.osu.cse5234.controller;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,12 +35,14 @@ public class Purchase {
 	public String submitItems(@ModelAttribute("inventory") Inventory inventory, HttpServletRequest request){
 		List<LineItem> lineItems = new ArrayList<LineItem>();
 		for(Item item : inventory.getItemList()) {
-			LineItem lineItem = new LineItem();
-			lineItem.setItemId(item.getId());
-			lineItem.setItemName(item.getName());
-			System.out.println(item.getName() + " - " + lineItem.getItemName());
-			lineItem.setQuantity(item.getQuantity());
-			lineItems.add(lineItem);
+			if(item.getQuantity() > 0) {
+				LineItem lineItem = new LineItem();
+				lineItem.setItemId(item.getId());
+				lineItem.setItemName(item.getName());
+				//System.out.println(item.getName() + " - " + lineItem.getItemName() + item.getId());			
+				lineItem.setQuantity(item.getQuantity());
+				lineItems.add(lineItem);
+			}
 		}
 		Order order = new Order();
 		order.setLineItems(lineItems);
@@ -84,6 +85,7 @@ public class Purchase {
 		request.getSession().setAttribute("shippingInfo", shippingInfo);
 		Order order = (Order) request.getSession().getAttribute("order");
 		order.setShippingInfo(shippingInfo);
+		order.setCustomerName(shippingInfo.getName());
 		request.getSession().setAttribute("order", order);
 		return "redirect:/purchase/viewOrder";
 	}

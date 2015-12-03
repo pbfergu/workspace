@@ -84,7 +84,7 @@ public class Order {
 	}
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="PAYMENT_ID",insertable=false, updatable=false)
+	@JoinColumn(name="CUSTOMER_ORDER_ID_FK",insertable=false, updatable=false)
 	public PaymentInfo getPaymentInfo() {
 		return paymentInfo;
 	}
@@ -93,7 +93,7 @@ public class Order {
 	}
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="SHIPPING_ID",insertable=false, updatable=false)
+	@JoinColumn(name="CUSTOMER_ORDER_ID_FK",insertable=false, updatable=false)
 	public ShippingInfo getShippingInfo() {
 		return shippingInfo;
 	}
