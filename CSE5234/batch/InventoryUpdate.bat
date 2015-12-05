@@ -1,0 +1,6 @@
+echo Inventory Update Process is executing...
+
+"/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/bin/java" -classpath /Users/Zeller/Code/workspace/CSE5234/batch/h2-1.4.900.jar /Users/Zeller/Code/workspace/CSE5234/batch/InventoryUpdater.class 
+
+echo Inventory Update completed...
+pause
